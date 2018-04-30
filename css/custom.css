@@ -1,0 +1,7 @@
+article {
+  margin: 0 calc((100vw - 400px) / 2);
+}
+
+h2 > a {
+  font-size: 0.6em;
+}
