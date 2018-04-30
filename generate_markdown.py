@@ -33,5 +33,5 @@ These are my projects on github.
 
 repo_text_list = [md_repo_template.format(**repo) for repo in repos]
 
-with open('index.md', 'w') as f:
+with open('Portfolio.md', 'w') as f:
     f.write(md_template.format('\n'.join(repo_text_list)).encode('utf8'))
