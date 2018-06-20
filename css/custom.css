@@ -1,4 +1,4 @@
-article {
+body {
   margin: 0 calc((100vw - 400px) / 2);
 }
 
