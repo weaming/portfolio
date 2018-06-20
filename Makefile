@@ -1,3 +1,5 @@
+.PHONY: local fetch generate-md generate-html open
+
 local: generate-md generate-html open
 
 fetch:
@@ -13,5 +15,3 @@ generate-html:
 open:
 	open index.html
 
-
-.PHONY: generate open fetch-generate local
