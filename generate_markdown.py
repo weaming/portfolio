@@ -7,7 +7,7 @@ with open('repos.json') as f:
     repos = json.load(f)
 
 with open('projects-show.txt') as f:
-    included = list(l.strip() for l in f)
+    included = list(l.strip() for l in f if l.strip()[0] not in '# \n')
 
 with open('config.json') as f:
     cfg = json.load(f)
@@ -31,7 +31,8 @@ These are my projects on github.
 {}
 """
 
-repo_text_list = [md_repo_template.format(**repo) for repo in repos]
+repo_text_list = [md_repo_template.format(**repo) for repo in sorted(
+    repos, key=lambda x: sum(x[k] for k in ['stargazers_count', 'watchers_count', 'forks_count']))]
 
 with open('Portfolio.md', 'w') as f:
     f.write(md_template.format('\n'.join(repo_text_list)).encode('utf8'))
