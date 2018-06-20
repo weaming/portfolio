@@ -1,3 +1,11 @@
+sunshine
+sogou-translate
+proxyany
+expiringdict
+photoflow
+photobox
+jsonkv
+imaurUpload
 telebox
 filetree
 ToolsBox
