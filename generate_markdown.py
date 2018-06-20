@@ -12,8 +12,9 @@ with open('projects-show.txt') as f:
 with open('config.json') as f:
     cfg = json.load(f)
 
-repos = filter(lambda x: x['name'] in included and x['owner']['login'] == cfg['username'], repos)
-
+repos = filter(
+    lambda x: x['name'] in included and x['owner']['login'] == cfg['username'],
+    repos)
 
 md_repo_template = u"""## {name} [source]({html_url})
 
@@ -32,7 +33,13 @@ These are my projects on github.
 """
 
 repo_text_list = [md_repo_template.format(**repo) for repo in sorted(
-    repos, key=lambda x: sum(x[k] for k in ['stargazers_count', 'watchers_count', 'forks_count']))]
+    repos,
+    key=lambda x: sum(x[k] for k in [
+        'stargazers_count',
+        'watchers_count',
+        'forks_count',
+    ]),
+    reverse=True)]
 
 with open('Portfolio.md', 'w') as f:
     f.write(md_template.format('\n'.join(repo_text_list)).encode('utf8'))
