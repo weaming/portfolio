@@ -8,13 +8,13 @@ with open('repos.json') as f:
 
 with open('projects-show.txt') as f:
     included = list(l.strip() for l in f if l.strip()[0] not in '# \n')
+    print(included)
 
 with open('config.json') as f:
     cfg = json.load(f)
 
-repos = filter(
-    lambda x: x['name'] in included and x['owner']['login'] == cfg['username'],
-    repos)
+repos_map = {x['name'].lower(): x for x in repos if x['owner']['login'] == cfg['username']}
+repos_filtered = [repos_map[x.lower()] for x in included if x.lower() in repos_map]
 
 md_repo_template = u"""## {name} [source]({html_url})
 
@@ -33,7 +33,7 @@ These are my projects on github.
 """
 
 repo_text_list = [md_repo_template.format(**repo) for repo in sorted(
-    repos,
+    repos_filtered,
     key=lambda x: sum(x[k] for k in [
         'stargazers_count',
         'watchers_count',

@@ -50,14 +50,6 @@ Telegram bot receiving message via HTTP API. Built in RSS crawler manager.
 
 Hack Mobike API
 
-## expiringdict [source](https://github.com/weaming/expiringdict)
-
-- Star: 1 Watch: 1 Fork: 0
-- Created: 2018-06-12
-- Updated: 2018-06-20
-
-Dictionary with auto-expiring values for caching purposes.
-
 ## jsonkv [source](https://github.com/weaming/jsonkv)
 
 - Star: 1 Watch: 1 Fork: 0
@@ -65,6 +57,14 @@ Dictionary with auto-expiring values for caching purposes.
 - Updated: 2019-06-03
 
 JSON file as KV store
+
+## expiringdict [source](https://github.com/weaming/expiringdict)
+
+- Star: 1 Watch: 1 Fork: 0
+- Created: 2018-06-12
+- Updated: 2018-06-20
+
+Dictionary with auto-expiring values for caching purposes.
 
 ## s [source](https://github.com/weaming/s)
 
@@ -81,6 +81,14 @@ JSON file as KV store
 - Updated: 2018-07-16
 
 :evergreen_tree: Easy file tree
+
+## markdir [source](https://github.com/weaming/markdir)
+
+- Star: 0 Watch: 0 Fork: 1
+- Created: 2019-03-19
+- Updated: 2019-03-29
+
+A simple HTTP server for rendering markdown files
 
 ## ToolsBox [source](https://github.com/weaming/ToolsBox)
 
